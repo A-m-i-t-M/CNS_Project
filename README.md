@@ -3,7 +3,7 @@ To use your Docker container on another computer, you can follow these steps:
 ---
 
 ### **Step 1: Push Your Container to Docker Hub (Already Done)**
-If you've already pushed your images (`bkarthik7/cns_backend` and `bkarthik7/cns_frontend`) to Docker Hub, you're ready to pull them on another machine.
+If you've already pushed your images (`bkarthik7/cns_backend` and `bkarthik7/cns_frontend`) to Docker Hub, you're ready to pull them on another machine.Once that is done go to next step
 
 ---
 
