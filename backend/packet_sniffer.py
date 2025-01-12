@@ -77,37 +77,10 @@ def process_packet(packet):
         if is_rate_limited(metadata["src_ip"]):
             log_message = f"Action: block (rate-limited) | Packet: {metadata}"
             logging.info(log_message)
-            print(f"Rate-limited: {metadata}")
             return
 
         action = match_packet(metadata, rules)
         log_message = f"Action: {action} | Packet: {metadata}"
         logging.info(log_message)
-        if action == "block":
-            print(f"Blocked: {metadata}")
-        else:
-            print(f"Allowed: {metadata}")
 
-
-while True:
-    command = input("Enter 'add' to add a rule or 'exit' to quit: ")
-    if command == "add":
-        src_ip = input("Enter source IP: ")
-        protocol = input("Enter protocol (TCP/UDP): ")
-        action = input("Enter action (allow/block): ")
-        size_min = int(input("Enter minimum size: "))
-        size_max = int(input("Enter maximum size: "))
-        new_rule = {
-            "action": action,
-            "src_ip": src_ip,
-            "protocol": protocol,
-            "size_min": size_min,
-            "size_max": size_max
-        }
-        add_rule(new_rule)
-        print(f"Rule added: {new_rule}")
-    elif command == "exit":
-        break
-
-print("Starting packet capture with filtering. Press Ctrl+C to stop.")
 sniff(prn=process_packet)

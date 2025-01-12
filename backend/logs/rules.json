@@ -1,32 +1,16 @@
 [
     {
-        "action": "block",
-        "src_ip": "192.168.1.100",
-        "protocol": "TCP",
-        "size_min": 0,
-        "size_max": 1500,
-        "start_time": "09:00",
-        "end_time": "18:00"
-    },
-    {
-        "action": "",
-        "src_ip": "",
-        "protocol": "",
-        "size_min": 0,
-        "size_max": 0
-    },
-    {
-        "action": "block",
+        "action": "allow",
         "src_ip": "0.0.0.0",
-        "protocol": "udp",
+        "protocol": "TCP",
+        "size_min": null,
+        "size_max": 1600
+    },
+    {
+        "action": "block",
+        "src_ip": "197.1.2.38",
+        "protocol": "UDP",
         "size_min": 0,
         "size_max": 1500
-    },
-    {
-        "action": "",
-        "src_ip": "",
-        "protocol": "",
-        "size_min": 0,
-        "size_max": 0
     }
 ]
