@@ -1,18 +1,14 @@
 version: "3.8"
 services:
   backend:
-    build:
-      context: ./backend
+    image: bkarthik7/cns_backend:latest
     ports:
       - "8000:8000"
-    volumes:
-      - ./backend:/app
     networks:
       - app-network
 
   frontend:
-    build:
-      context: ./frontend
+    image: bkarthik7/cns_frontend:latest
     ports:
       - "80:80"
     networks:
