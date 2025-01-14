@@ -11,6 +11,10 @@ ip_rate_limit = defaultdict(list)  # Tracks timestamps of packets per IP
 RATE_LIMIT = 10  # Max packets allowed per IP within the time window
 TIME_WINDOW = 10  # Time window in seconds
 
+print("--------------------\n"
+      "Packet Sniffer Started \n"
+      "--------------------\n")
+
 # Set up logging
 logging.basicConfig(filename="logs/packet_log.txt", level=logging.INFO, format="%(asctime)s - %(message)s")
 
