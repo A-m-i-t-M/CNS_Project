@@ -13,5 +13,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Expose port 8000 to be accessible from the outside
 EXPOSE 8000
 
-# Command to run the FastAPI app
-CMD ["uvicorn", "api:app", "--host", "0.0.0.0", "--port", "8000"]
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+CMD ["/entrypoint.sh"]
